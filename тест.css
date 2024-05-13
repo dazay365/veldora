@@ -1,0 +1,363 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Стили для основного содержимого страницы */
+body {
+    line-height: 1.5; /* Определение высоты строки */
+    font-family: Comic Sans MS; /* Установка шрифта */
+}
+
+/* Общие стили для всех элементов */
+* {
+    margin: 0; /* Обнуление отступов */
+    padding: 0; /* Обнуление отступов */
+    box-sizing: border-box; /* Установка модели блока */
+}
+
+/* Стили для верхней части страницы (шапка) */
+.header {
+    background-position: center; /* Расположение фонового изображения по центру */
+    background-size: cover; /* Масштабирование фонового изображения */
+    background-repeat: no-repeat; /* Отмена повтора фонового изображения */
+    height: 100vh; /* Высота элемента равная высоте видимой части окна браузера */
+}
+
+/* Стили для навигационного меню */
+nav {
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    justify-content: space-between; /* Выравнивание элементов по горизонтали с равным пространством между ними */
+    max-width: 80%; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрирование контейнера по горизонтали */
+    padding: 1.4rem 1rem; /* Внутренние отступы */
+    background-color: #000000b5; /* Цвет фона */
+    backdrop-filter: blur(10px); /* Применение размытия заднего плана */
+    border-radius: 3rem; /* Скругление углов */
+    margin-top: 1rem; /* Внешний отступ сверху */
+}
+
+/* Стили для логотипа */
+.logo {
+    font-size: 1.3rem; /* Размер шрифта */
+    font-weight: 600; /* Начертание шрифта */
+}
+
+.logo a {
+    color: #fff; /* Цвет текста */
+    text-decoration: none; /* Отмена подчеркивания ссылки */
+}
+
+/* Стили для списка навигации */
+ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    margin: 0; /* Обнуление внешних отступов */
+    padding: 0; /* Обнуление внешних отступов */
+    background-color: transparent; /* Прозрачный цвет фона */
+    overflow: hidden; /* Отображение скроллбара при необходимости */
+    margin-bottom: 0; /* Обнуление внешних отступов снизу */
+}
+
+/* Стили для элементов списка */
+li {
+    padding: 0rem 1.1rem; /* Внутренние отступы */
+    float: left; /* Выравнивание по горизонтали */
+}
+
+/* Стили для ссылок в списке */
+li a {
+    color: #e96d3f; /* Цвет текста */
+    text-decoration: none; /* Отмена подчеркивания ссылки */
+    font-size: 1rem; /* Размер шрифта */
+    font-weight: 600; /* Начертание шрифта */
+    letter-spacing: .7px; /* Межбуквенный интервал */
+}
+
+/* Стили для псевдоэлементов ссылок */
+ul li a {
+    position: relative; /* Установка позиции */
+}
+
+ul li a::before {
+    content: ""; /* Добавление контента */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: -6px; /* Положение снизу */
+    width: 100%; /* Ширина */
+    height: 3px; /* Высота */
+    background-color: #fff; /* Цвет фона */
+}
+
+ul li a::before {
+    transform: scale(0, 1); /* Масштабирование */
+    transition: transform .3s ease; /* Плавное изменение */
+}
+
+ul li a:hover::before {
+    transform: scale(1, 1); /* Масштабирование */
+}
+
+li a.active,
+li a:hover {
+    color: #fff; /* Цвет текста */
+    transition: all .3s ease-in-out; /* Плавное изменение */
+}
+
+#click {
+    display: none; /* Невидимость элемента */
+}
+
+.menu {
+    display: none; /* Невидимость элемента */
+}
+
+/* Стили для контейнера и карточек товаров */
+.container {
+    max-width: 1170px; /* Максимальная ширина контейнера */
+    margin: auto; /* Центрирование контейнера по горизонтали */
+}
+
+.row {
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    flex-wrap: wrap; /* Разрыв строки при необходимости */
+}
+
+.cards {
+    display: grid; /* Отображение элементов в виде сетки */
+    grid-template-columns: repeat(auto-fill, 225px); /* Создание колонок с автоматической шириной */
+    width: 100%; /* Ширина контейнера */
+    max-width: 1000px; /* Максимальная ширина контейнера */
+    justify-content: center; /* Выравнивание элементов по центру */
+    justify-items: center; /* Выравнивание элементов по центру */
+    column-gap: 30px; /* Отступ между колонками */
+    row-gap: 40px; /* Отступ между строками */
+    margin: 0 auto; /* Центрирование контейнера по горизонтали */
+}
+
+.card {
+    width: 200px; /* Ширина карточки */
+    margin: 10px; /* Внешние отступы */
+    padding: 10px; /* Внутренние отступы */
+    width: 225px; /* Ширина карточки */
+    min-height: 350px; /* Минимальная высота карточки */
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1); /* Тень карточки */
+    display: flex; /* Отображение элементов в виде колонки */
+    flex-direction: column; /* Отображение элементов в виде колонки */
+    border-radius: 4px; /* Скругление углов */
+    transition: 0.2s; /* Плавное изменение */
+    position: relative; /* Установка позиции */
+}
+
+.card:hover {
+    box-shadow: 4px 8px 16px rgba(255, 102, 51, 0.2); /* Изменение тени при наведении */
+}
+
+.card__top {
+    flex: 0 0 220px; /* Определение размера */
+    position: relative; /* Установка позиции */
+    overflow: hidden; /* Скрытие выходящих за пределы элементов */
+}
+
+.card__image {
+    display: block; /* Отображение элемента в виде блока */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Положение сверху */
+    left: 0; /* Положение слева */
+    width: 100%; /* Ширина */
+    height: 100%; /* Высота */
+}
+
+.card__image > img {
+    width: 100%; /* Ширина изображения */
+    height: 100%; /* Высота изображения */
+    object-fit: contain; /* Масштабирование изображения */
+    transition: 0.2s; /* Плавное изменение */
+}
+
+.card__image:hover > img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.card__label {
+    padding: 4px 8px; /* Внутренние отступы */
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 10px; /* Положение снизу */
+    left: 10px; /* Положение слева */
+    background: #ff6633; /* Цвет фона */
+    border-radius: 4px; /* Скругление углов */
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 16px; /* Размер шрифта */
+    color: #fff; /* Цвет текста */
+}
+
+.card__bottom {
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    flex-direction: column; /* Отображение элементов в виде колонки */
+    flex: 1 0 auto; /* Определение размера */
+    padding: 10px; /* Внутренние отступы */
+}
+
+.card__prices {
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    margin-bottom: 10px; /* Внутренние отступы снизу */
+    flex: 0 0 50%; /* Определение размера */
+}
+
+.card__price::after {
+    content: "₸"; /* Добавление контента */
+    margin-left: 4px; /* Внутренние отступы слева */
+    position: relative; /* Установка позиции */
+}
+
+.card__price--discount {
+    font-weight: 700; /* Начертание шрифта */
+    font-size: 19px; /* Размер шрифта */
+    color: #414141; /* Цвет текста */
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    flex-wrap: wrap-reverse; /* Оборачивание элементов */
+}
+
+.card__price--discount::before {
+    content: "Со скидкой"; /* Добавление контента */
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 16px; /* Размер шрифта */
+    color: #bfbfbf; /* Цвет текста */
+}
+
+.card__price--common {
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 17px; /* Размер шрифта */
+    color: #606060; /* Цвет текста */
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    flex-wrap: wrap-reverse; /* Оборачивание элементов */
+    justify-content: flex-end; /* Выравнивание элементов по правому краю */
+}
+
+.card__price--common::before {
+    content: "Обычная"; /* Добавление контента */
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 16px; /* Размер шрифта */
+    color: #bfbfbf; /* Цвет текста */
+}
+
+.card__title {
+    display: block; /* Отображение элемента в виде блока */
+    margin-bottom: 10px; /* Внутренние отступы снизу */
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 17px; /* Размер шрифта */
+    line-height: 150%; /* Высота строки */
+    color: #414141; /* Цвет текста */
+}
+
+.card__title:hover {
+    color: #ff6633; /* Цвет текста при наведении */
+}
+
+.card__add {
+    display: block; /* Отображение элемента в виде блока */
+    width: 100%; /* Ширина элемента */
+    font-weight: 400; /* Начертание шрифта */
+    font-size: 17px; /* Размер шрифта */
+    color: #70c05b; /* Цвет текста */
+    padding: 10px; /* Внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    border: 1px solid #70c05b; /* Граница */
+    border-radius: 4px; /* Скругление углов */
+    cursor: pointer; /* Установка курсора */
+    transition: 0.2s; /* Плавное изменение */
+    margin-top: auto; /* Отступ сверху */
+}
+
+.card__add:hover {
+    border: 1px solid #ff6633; /* Изменение границы при наведении */
+    background-color: #ff6633; /* Цвет фона при наведении */
+    color: #fff; /* Цвет текста при наведении */
+}
+
+/* Стили для подвала страницы */
+.footer {
+    background-color: #24262b; /* Цвет фона */
+    padding: 70px 0; /* Внутренние отступы */
+}
+
+/* Стили для колонок подвала */
+.footer-col {
+    width: 25%; /* Ширина колонки */
+    padding: 0 15px; /* Внутренние отступы */
+}
+
+.footer-col h4 {
+    font-size: 18px; /* Размер шрифта */
+    color: #ffffff; /* Цвет текста */
+    text-transform: capitalize; /* Преобразование текста в прописные буквы */
+    margin-bottom: 35px; /* Внутренние отступы снизу */
+    font-weight: 500; /* Начертание шрифта */
+    position: relative; /* Установка позиции */
+}
+
+.footer-col h4::before {
+    content: ''; /* Добавление контента */
+    position: absolute; /* Абсолютное позиционирование */
+    left:0; /* Положение слева */
+    bottom: -10px; /* Положение снизу */
+    background-color: #e91e63; /* Цвет фона */
+    height: 2px; /* Высота */
+    box-sizing: border-box; /* Установка модели блока */
+    width: 50px; /* Ширина */
+}
+
+.footer-col ul {
+    list-style: none; /* Убираем маркеры списка */
+    display: flex; /* Отображение элементов в виде горизонтального ряда */
+    flex-direction: column; /* Отображение элементов в виде колонки */
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px; /* Внутренние отступы снизу */
+}
+
+.footer-col ul li a {
+    font-size: 16px; /* Размер шрифта */
+    text-transform: capitalize; /* Преобразование текста в прописные буквы */
+    color: #ffffff; /* Цвет текста */
+    text-decoration: none; /* Отмена подчеркивания ссылки */
+    font-weight: 300; /* Начертание шрифта */
+    color: #bbbbbb; /* Цвет текста */
+    display: block; /* Отображение элемента в виде блока */
+    transition: all 0.3s ease; /* Плавное изменение */
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff; /* Цвет текста при наведении */
+    padding-left: 8px; /* Внутренние отступы слева */
+}
+
+.footer-col .social-links a {
+    display: inline-block; /* Отображение элементов в виде блока */
+    height: 40px; /* Высота элемента */
+    width: 40px; /* Ширина элемента */
+    background-color: rgba(255,255,255,0.2); /* Цвет фона */
+    margin: 0 10px 10px 0; /* Внешние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+    line-height: 40px; /* Высота строки */
+    border-radius: 50%; /* Скругление углов */
+    color: #ffffff; /* Цвет текста */
+    transition: all 0.5s ease; /* Плавное изменение */
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b; /* Цвет текста при наведении */
+    background-color: #ffffff; /* Цвет фона при наведении */
+}
+
+/* Адаптивные стили */
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%; /* Ширина колонки */
+        margin-bottom: 30px; /* Внутренние отступы снизу */
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%; /* Ширина колонки */
+    }
+}
